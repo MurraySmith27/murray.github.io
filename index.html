@@ -1,10 +1,78 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>My Website</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Murray Smith — Game Developer</title>
+    <meta name="description" content="Portfolio of Murray Smith — games, experiments and creative code." />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./lib/three.module.min.js"
+        }
+      }
+    </script>
   </head>
   <body>
-    <h1>Hello world!</h1>
-    <p>This site is hosted on GitHub Pages.</p>
+    <!-- WebGL background canvas -->
+    <canvas id="bg"></canvas>
+
+    <!-- Top navigation: social links -->
+    <header class="topbar">
+      <a class="brand" href="#top">MS<span>.dev</span></a>
+      <nav class="socials" aria-label="Social links">
+        <a class="social" href="https://www.youtube.com/@murray_dev" target="_blank" rel="noopener" data-label="YouTube" style="--c:#ff0033">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12s0-3.5-.45-5.18a2.9 2.9 0 0 0-2.04-2.05C18.83 4.32 12 4.32 12 4.32s-6.83 0-8.51.45a2.9 2.9 0 0 0-2.04 2.05C1 8.5 1 12 1 12s0 3.5.45 5.18a2.9 2.9 0 0 0 2.04 2.05C5.17 19.68 12 19.68 12 19.68s6.83 0 8.51-.45a2.9 2.9 0 0 0 2.04-2.05C23 15.5 23 12 23 12ZM9.75 15.5v-7l6 3.5-6 3.5Z"/></svg>
+        </a>
+        <a class="social" href="https://www.instagram.com/murray_game_dev/" target="_blank" rel="noopener" data-label="Instagram" style="--c:#e1306c">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2Zm0 1.8c-3.15 0-3.5.01-4.74.07-.9.04-1.38.19-1.7.32-.43.16-.74.36-1.06.68-.32.32-.52.63-.68 1.06-.13.32-.28.8-.32 1.7C3.44 8.5 3.43 8.85 3.43 12s.01 3.5.07 4.74c.04.9.19 1.38.32 1.7.16.43.36.74.68 1.06.32.32.63.52 1.06.68.32.13.8.28 1.7.32 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.36 1.06-.68.32-.32.52-.63.68-1.06.13-.32.28-.8.32-1.7.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.04-.9-.19-1.38-.32-1.7a2.85 2.85 0 0 0-.68-1.06 2.85 2.85 0 0 0-1.06-.68c-.32-.13-.8-.28-1.7-.32C15.5 4.01 15.15 4 12 4Zm0 3.06A4.94 4.94 0 1 0 12 16.94 4.94 4.94 0 0 0 12 7.06Zm0 8.15A3.21 3.21 0 1 1 12 8.8a3.21 3.21 0 0 1 0 6.41Zm6.29-8.35a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg>
+        </a>
+        <a class="social" href="https://www.tiktok.com/@murray_game_dev" target="_blank" rel="noopener" data-label="TikTok" style="--c:#25f4ee">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.1v12.4a2.53 2.53 0 0 1-2.53 2.36 2.53 2.53 0 1 1 .73-4.95v-3.2a5.66 5.66 0 0 0-.73-.05 5.66 5.66 0 1 0 5.66 5.66V8.9a7.35 7.35 0 0 0 4.28 1.37V7.16a4.28 4.28 0 0 1-3.27-1.34Z"/></svg>
+        </a>
+        <a class="social" href="https://x.com/Murrdog_Games" target="_blank" rel="noopener" data-label="X" style="--c:#e7e9ea">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2.5h3.3l-7.2 8.24L23.7 21.5h-6.63l-5.2-6.8-5.95 6.8H2.6l7.7-8.8L2.03 2.5h6.8l4.7 6.22 5.37-6.22Zm-1.16 17h1.83L7.34 4.4H5.38L17.74 19.5Z"/></svg>
+        </a>
+        <a class="social" href="https://bsky.app/profile/murrdoggames.bsky.social" target="_blank" rel="noopener" data-label="Bluesky" style="--c:#0a7aff">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10.8C10.93 8.72 8.03 4.85 5.34 2.95 2.76 1.13 1.77 1.44 1.12 1.74.36 2.09.23 3.25.23 3.94c0 .68.37 5.6.62 6.42.8 2.72 3.69 3.64 6.35 3.35-3.9.58-7.36 2-2.82 7.05 5 5.28 6.85-1.13 7.8-4.38.95 3.25 2.05 9.44 7.7 4.38 4.25-4.38 1.18-6.47-2.72-7.05 2.66.29 5.55-.63 6.35-3.35.25-.82.62-5.74.62-6.42 0-.69-.13-1.85-.89-2.2-.65-.3-1.64-.61-4.22 1.21-2.69 1.9-5.59 5.77-6.66 7.85Z"/></svg>
+        </a>
+        <a class="social" href="https://linkedin.com/in/murray" target="_blank" rel="noopener" data-label="LinkedIn" style="--c:#0a66c2">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.2.8 24 1.77 24h20.45c.98 0 1.78-.8 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
+        </a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- Hero -->
+      <section class="hero">
+        <p class="eyebrow">Game Developer &amp; Creative Coder</p>
+        <h1>Murray&nbsp;Smith</h1>
+        <p class="tagline">I build games, worlds and interactive experiments. Scroll to explore the collection.</p>
+        <a class="cta" href="#games">View my games ↓</a>
+      </section>
+
+      <!-- Games -->
+      <section class="games" id="games">
+        <h2 class="section-title">Games</h2>
+        <p class="section-sub">A selection of things I've made. Click a card to play.</p>
+        <div class="grid" id="game-grid"><!-- populated by app.js --></div>
+      </section>
+
+      <!-- About / contact -->
+      <section class="outro" id="about">
+        <h2 class="section-title">Let's build something</h2>
+        <p class="section-sub">Reach out on any platform above, or drop me a line.</p>
+        <a class="cta" href="mailto:murraysmith2727@gmail.com">Say hello →</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> Murray Smith</span>
+      <span>Built with three.js</span>
+    </footer>
+
+    <script type="module" src="app.js"></script>
   </body>
 </html>
