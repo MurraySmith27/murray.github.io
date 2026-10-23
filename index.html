@@ -3,76 +3,199 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Murray Smith — Game Developer</title>
-    <meta name="description" content="Portfolio of Murray Smith — games, experiments and creative code." />
+    <title>~*~ Murray's Homepage ~*~</title>
+    <meta name="description" content="Murray Smith, solo game developer from Toronto. Home of DeckTerra and Paw Pirates." />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E" />
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "./lib/three.module.min.js"
-        }
-      }
-    </script>
+    <link rel="icon" href="img/gifs/smiley.gif" />
   </head>
   <body>
-    <!-- WebGL background canvas -->
-    <canvas id="bg"></canvas>
+    <div class="page" id="top">
 
-    <!-- Top navigation: social links -->
-    <header class="topbar">
-      <a class="brand" href="#top">MS<span>.dev</span></a>
-      <nav class="socials" aria-label="Social links">
-        <a class="social" href="https://www.youtube.com/@murray_dev" target="_blank" rel="noopener" data-label="YouTube" style="--c:#ff0033">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12s0-3.5-.45-5.18a2.9 2.9 0 0 0-2.04-2.05C18.83 4.32 12 4.32 12 4.32s-6.83 0-8.51.45a2.9 2.9 0 0 0-2.04 2.05C1 8.5 1 12 1 12s0 3.5.45 5.18a2.9 2.9 0 0 0 2.04 2.05C5.17 19.68 12 19.68 12 19.68s6.83 0 8.51-.45a2.9 2.9 0 0 0 2.04-2.05C23 15.5 23 12 23 12ZM9.75 15.5v-7l6 3.5-6 3.5Z"/></svg>
-        </a>
-        <a class="social" href="https://www.instagram.com/murray_game_dev/" target="_blank" rel="noopener" data-label="Instagram" style="--c:#e1306c">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2Zm0 1.8c-3.15 0-3.5.01-4.74.07-.9.04-1.38.19-1.7.32-.43.16-.74.36-1.06.68-.32.32-.52.63-.68 1.06-.13.32-.28.8-.32 1.7C3.44 8.5 3.43 8.85 3.43 12s.01 3.5.07 4.74c.04.9.19 1.38.32 1.7.16.43.36.74.68 1.06.32.32.63.52 1.06.68.32.13.8.28 1.7.32 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c.9-.04 1.38-.19 1.7-.32.43-.16.74-.36 1.06-.68.32-.32.52-.63.68-1.06.13-.32.28-.8.32-1.7.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.04-.9-.19-1.38-.32-1.7a2.85 2.85 0 0 0-.68-1.06 2.85 2.85 0 0 0-1.06-.68c-.32-.13-.8-.28-1.7-.32C15.5 4.01 15.15 4 12 4Zm0 3.06A4.94 4.94 0 1 0 12 16.94 4.94 4.94 0 0 0 12 7.06Zm0 8.15A3.21 3.21 0 1 1 12 8.8a3.21 3.21 0 0 1 0 6.41Zm6.29-8.35a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg>
-        </a>
-        <a class="social" href="https://www.tiktok.com/@murray_game_dev" target="_blank" rel="noopener" data-label="TikTok" style="--c:#25f4ee">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.1v12.4a2.53 2.53 0 0 1-2.53 2.36 2.53 2.53 0 1 1 .73-4.95v-3.2a5.66 5.66 0 0 0-.73-.05 5.66 5.66 0 1 0 5.66 5.66V8.9a7.35 7.35 0 0 0 4.28 1.37V7.16a4.28 4.28 0 0 1-3.27-1.34Z"/></svg>
-        </a>
-        <a class="social" href="https://x.com/Murrdog_Games" target="_blank" rel="noopener" data-label="X" style="--c:#e7e9ea">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2.5h3.3l-7.2 8.24L23.7 21.5h-6.63l-5.2-6.8-5.95 6.8H2.6l7.7-8.8L2.03 2.5h6.8l4.7 6.22 5.37-6.22Zm-1.16 17h1.83L7.34 4.4H5.38L17.74 19.5Z"/></svg>
-        </a>
-        <a class="social" href="https://bsky.app/profile/murrdoggames.bsky.social" target="_blank" rel="noopener" data-label="Bluesky" style="--c:#0a7aff">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10.8C10.93 8.72 8.03 4.85 5.34 2.95 2.76 1.13 1.77 1.44 1.12 1.74.36 2.09.23 3.25.23 3.94c0 .68.37 5.6.62 6.42.8 2.72 3.69 3.64 6.35 3.35-3.9.58-7.36 2-2.82 7.05 5 5.28 6.85-1.13 7.8-4.38.95 3.25 2.05 9.44 7.7 4.38 4.25-4.38 1.18-6.47-2.72-7.05 2.66.29 5.55-.63 6.35-3.35.25-.82.62-5.74.62-6.42 0-.69-.13-1.85-.89-2.2-.65-.3-1.64-.61-4.22 1.21-2.69 1.9-5.59 5.77-6.66 7.85Z"/></svg>
-        </a>
-        <a class="social" href="https://www.linkedin.com/in/murray-smith-793000196/" target="_blank" rel="noopener" data-label="LinkedIn" style="--c:#0a66c2">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.2.8 24 1.77 24h20.45c.98 0 1.78-.8 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
-        </a>
-      </nav>
-    </header>
+      <!-- ===== HEADER ===== -->
+      <header class="masthead">
+        <img class="mast-gif left" src="img/gifs/fire.gif" alt="" width="64" height="64" />
+        <div>
+          <h1 class="wordart">Murray's Homepage</h1>
+          <p class="subtitle"><img src="img/gifs/new.gif" alt="NEW" width="40" height="20" /> game dev from Toronto, Canada <img src="img/gifs/new.gif" alt="NEW" width="40" height="20" /></p>
+        </div>
+        <img class="mast-gif right" src="img/gifs/fire.gif" alt="" width="64" height="64" />
+      </header>
 
-    <main id="top">
-      <!-- Hero -->
-      <section class="hero">
-        <p class="eyebrow">Game Developer &amp; Creative Coder</p>
-        <h1>Murray&nbsp;Smith</h1>
-        <p class="tagline">I build games, worlds and interactive experiments. Scroll to explore the collection.</p>
-        <a class="cta" href="#games">View my games ↓</a>
-      </section>
+      <marquee class="ticker" scrollamount="5">
+        ★ Welcome 2 my corner of the web!! ★ DeckTerra is coming to Steam in 2026, WISHLIST IT NOW!! ★ Paw Pirates is OUT NOW and FREE TO PLAY ★ sign my guestbook ★ thx 4 visiting ★
+      </marquee>
 
-      <!-- Games -->
-      <section class="games" id="games">
-        <h2 class="section-title">Games</h2>
-        <p class="section-sub">A selection of things I've made. Click a card to play.</p>
-        <div class="grid" id="game-grid"><!-- populated by app.js --></div>
-      </section>
+      <div class="layout">
 
-      <!-- About / contact -->
-      <section class="outro" id="about">
-        <h2 class="section-title">Let's build something</h2>
-        <p class="section-sub">Reach out on any platform above, or drop me a line.</p>
-        <a class="cta" href="mailto:murraysmith2727@gmail.com">Say hello →</a>
-      </section>
-    </main>
+        <!-- ===== SIDEBAR ===== -->
+        <nav class="sidebar" aria-label="Site">
+          <div class="window">
+            <div class="titlebar">Navigation</div>
+            <ul class="nav">
+              <li><a href="#about"><img src="img/gifs/smiley.gif" alt="" width="20" height="20" /> About Me</a></li>
+              <li><a href="#deckterra"><img src="img/gifs/new-arrow.gif" alt="" width="24" height="16" /> DeckTerra</a></li>
+              <li><a href="#pawpirates"><img src="img/gifs/jollyroger.gif" alt="" width="24" height="16" /> Paw Pirates</a></li>
+              <li><a href="#links"><img src="img/gifs/at.gif" alt="" width="20" height="16" /> Links</a></li>
+            </ul>
+          </div>
 
-    <footer class="footer">
-      <span>© <span id="year"></span> Murray Smith</span>
-      <span>Built with three.js</span>
-    </footer>
+          <div class="window">
+            <div class="titlebar">Find me on...</div>
+            <ul class="nav social">
+              <li><a href="https://www.youtube.com/@murray_dev" target="_blank" rel="noopener">YouTube</a></li>
+              <li><a href="https://www.instagram.com/murray_game_dev/" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="https://www.tiktok.com/@murray_game_dev" target="_blank" rel="noopener">TikTok</a></li>
+              <li><a href="https://x.com/Murrdog_Games" target="_blank" rel="noopener">X / Twitter</a></li>
+              <li><a href="https://bsky.app/profile/murrdoggames.bsky.social" target="_blank" rel="noopener">Bluesky</a></li>
+              <li><a href="https://www.linkedin.com/in/murray-smith-793000196/" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
+          </div>
 
-    <script type="module" src="app.js"></script>
+          <div class="window center">
+            <div class="titlebar">Visitors</div>
+            <p class="tiny">You are visitor #</p>
+            <img src="img/gifs/counter.gif" alt="000163" width="105" height="36" />
+            <p><img src="img/gifs/globe.gif" alt="" width="40" height="40" /> <img src="img/gifs/dancer.gif" alt="" width="40" height="40" /></p>
+          </div>
+        </nav>
+
+        <!-- ===== MAIN ===== -->
+        <main class="content">
+
+          <!-- About -->
+          <section class="window" id="about">
+            <div class="titlebar">About_Me.txt</div>
+            <div class="body about">
+              <div class="polaroid">
+                <img src="img/murray.jpg" alt="Murray Smith" width="180" height="180" />
+                <span>me!! :)</span>
+              </div>
+              <div>
+                <h2>Hi, I'm Murray!</h2>
+                <p>I'm a <b>solo game developer</b> from <b>Toronto, Canada</b>. I love new genres and weird, experimental game ideas, especially in <u>strategy</u> and <u>simulation</u> games.</p>
+                <p>On this site you'll find the games I've made. Click around, look at the screenshots, and if something looks fun go grab it on Steam!</p>
+                <p class="center"><img src="img/gifs/construction.gif" alt="" width="40" height="38" /> <i>This site is always under construction</i> <img src="img/gifs/construction.gif" alt="" width="40" height="38" /></p>
+              </div>
+            </div>
+          </section>
+
+          <img class="divider" src="img/gifs/chicks.gif" alt="" width="384" height="35" />
+
+          <!-- DeckTerra -->
+          <section class="window game" id="deckterra">
+            <div class="titlebar">DeckTerra <img src="img/gifs/new.gif" alt="NEW" width="40" height="20" /></div>
+            <div class="body">
+              <a href="https://store.steampowered.com/app/3760980/DeckTerra/" target="_blank" rel="noopener">
+                <img class="banner" src="img/deckterra/header.jpg" alt="DeckTerra" width="460" height="215" />
+              </a>
+              <h2 class="rainbow">A 4X strategy game built around cards!!</h2>
+              <p><b>DeckTerra</b> is a <b>4X deckbuilder</b> where your empire is only as strong as your deck. Explore procedurally generated maps, research new technologies, develop your settlements and raise armies, all while building a deck that fits your strategy.</p>
+
+              <table class="info">
+                <tr><th>Genre</th><td>4X Strategy / Deckbuilder</td></tr>
+                <tr><th>Release</th><td><span class="blink">COMING 2026</span></td></tr>
+                <tr><th>Platforms</th><td>Windows, Mac, Linux</td></tr>
+                <tr><th>Modes</th><td>Single-player, Online PvP</td></tr>
+              </table>
+
+              <h3>~ Features ~</h3>
+              <ul class="features">
+                <li>🏰 <b>City placement matters.</b> Settle near plenty of resources and a source of fresh water.</li>
+                <li>🧪 <b>Discover new technology.</b> Work your way through the ages to expand your empire and bolster your military.</li>
+                <li>🙏 <b>Appease the gods.</b> Devote yourself to one of four deities and spend faith to unlock powerful buffs.</li>
+                <li>💰 <b>Build a trade network.</b> Send traders out to build relationships with neighbouring kingdoms.</li>
+                <li>🃏 <b>Your deck shapes your kingdom.</b> Got science cards? Build science buildings. Too many labour cards? Found more cities!</li>
+                <li>🏆 <b>Many paths to victory:</b> Science, Combat or Religious. No two kingdoms are alike!</li>
+              </ul>
+
+              <h3>~ Screenshots ~ <small>(click 2 enlarge)</small></h3>
+              <div class="shots">
+                <a href="img/deckterra/ss1.jpg" target="_blank"><img src="img/deckterra/ss1.jpg" alt="DeckTerra screenshot 1" loading="lazy" /></a>
+                <a href="img/deckterra/ss2.jpg" target="_blank"><img src="img/deckterra/ss2.jpg" alt="DeckTerra screenshot 2" loading="lazy" /></a>
+                <a href="img/deckterra/ss3.jpg" target="_blank"><img src="img/deckterra/ss3.jpg" alt="DeckTerra screenshot 3" loading="lazy" /></a>
+                <a href="img/deckterra/ss4.jpg" target="_blank"><img src="img/deckterra/ss4.jpg" alt="DeckTerra screenshot 4" loading="lazy" /></a>
+                <a href="img/deckterra/ss5.jpg" target="_blank"><img src="img/deckterra/ss5.jpg" alt="DeckTerra screenshot 5" loading="lazy" /></a>
+                <a href="img/deckterra/ss6.jpg" target="_blank"><img src="img/deckterra/ss6.jpg" alt="DeckTerra screenshot 6" loading="lazy" /></a>
+                <a href="img/deckterra/ss7.jpg" target="_blank"><img src="img/deckterra/ss7.jpg" alt="DeckTerra screenshot 7" loading="lazy" /></a>
+              </div>
+
+              <p class="center">
+                <a class="btn" href="https://store.steampowered.com/app/3760980/DeckTerra/" target="_blank" rel="noopener">&gt;&gt; Wishlist on Steam &lt;&lt;</a>
+              </p>
+            </div>
+          </section>
+
+          <img class="divider" src="img/gifs/chicks.gif" alt="" width="384" height="35" />
+
+          <!-- Paw Pirates -->
+          <section class="window game" id="pawpirates">
+            <div class="titlebar">Paw Pirates <img src="img/gifs/jollyroger.gif" alt="" width="30" height="20" /></div>
+            <div class="body">
+              <a href="https://store.steampowered.com/app/2927380/Paw_Pirates/" target="_blank" rel="noopener">
+                <img class="banner" src="img/pawpirates/header.jpg" alt="Paw Pirates" width="460" height="215" />
+              </a>
+              <h2 class="rainbow">Who will win: cats or dogs?!</h2>
+              <p class="center"><img src="img/gifs/jollyroger.gif" alt="" width="75" height="50" /> <img src="img/gifs/ship.gif" alt="" width="97" height="75" /> <img src="img/gifs/wheel.gif" alt="" width="54" height="75" /></p>
+              <p><b>Paw Pirates</b> is a multiplayer party game with cute critters! Tackle, dodge and blow up your friends as you compete to take out their pirate ship. Choose <b>team Cat</b> or <b>team Dog</b> and plunder across a multitude of levels!</p>
+
+              <table class="info">
+                <tr><th>Genre</th><td>Party / Casual</td></tr>
+                <tr><th>Released</th><td>16 Jan 2025 <span class="blink">FREE 2 PLAY!</span></td></tr>
+                <tr><th>Platforms</th><td>Windows, Mac</td></tr>
+                <tr><th>Modes</th><td>Couch co-op &amp; PvP, Remote Play Together</td></tr>
+                <tr><th>Made with</th><td>Team Paw</td></tr>
+              </table>
+
+              <h3>~ Features ~</h3>
+              <ul class="features">
+                <li>🐱 <b>Cats vs. Dogs</b> pirate showdowns on the high seas</li>
+                <li>💥 <b>Tackle your opponents</b> to send them flying</li>
+                <li>💣 <b>Blow up the enemy ship</b> before they sink yours</li>
+                <li>🎮 <b>Split-screen party fun</b> with full controller support</li>
+              </ul>
+
+              <h3>~ Screenshots ~ <small>(click 2 enlarge)</small></h3>
+              <div class="shots">
+                <a href="img/pawpirates/ss1.jpg" target="_blank"><img src="img/pawpirates/ss1.jpg" alt="Paw Pirates screenshot 1" loading="lazy" /></a>
+                <a href="img/pawpirates/ss2.jpg" target="_blank"><img src="img/pawpirates/ss2.jpg" alt="Paw Pirates screenshot 2" loading="lazy" /></a>
+                <a href="img/pawpirates/ss3.jpg" target="_blank"><img src="img/pawpirates/ss3.jpg" alt="Paw Pirates screenshot 3" loading="lazy" /></a>
+                <a href="img/pawpirates/ss4.jpg" target="_blank"><img src="img/pawpirates/ss4.jpg" alt="Paw Pirates screenshot 4" loading="lazy" /></a>
+                <a href="img/pawpirates/ss5.jpg" target="_blank"><img src="img/pawpirates/ss5.jpg" alt="Paw Pirates screenshot 5" loading="lazy" /></a>
+              </div>
+
+              <p class="center">
+                <a class="btn" href="https://store.steampowered.com/app/2927380/Paw_Pirates/" target="_blank" rel="noopener">&gt;&gt; Play FREE on Steam &lt;&lt;</a>
+              </p>
+              <img class="runner" src="img/gifs/dog.gif" alt="" width="200" height="35" />
+            </div>
+          </section>
+
+          <img class="divider" src="img/gifs/chicks.gif" alt="" width="384" height="35" />
+
+          <!-- Links / contact -->
+          <section class="window" id="links">
+            <div class="titlebar">Links &amp; Stuff</div>
+            <div class="body center">
+              <p><a href="mailto:murraysmith2727@gmail.com"><img src="img/gifs/emailme.gif" alt="Email me!" width="170" height="64" /></a></p>
+              <p><a href="mailto:murraysmith2727@gmail.com?subject=Guestbook"><img src="img/gifs/guestbook.gif" alt="Sign my guestbook" width="144" height="39" /></a></p>
+              <p class="badges">
+                <img src="img/gifs/netscape.gif" alt="Netscape Now!" width="120" height="45" />
+                <img src="img/gifs/piratesnow.gif" alt="Pirates Now!" width="88" height="31" />
+                <img src="img/gifs/hooray.gif" alt="Hooray!" width="142" height="57" />
+              </p>
+              <img class="construction" src="img/gifs/construction2.gif" alt="Under construction" width="249" height="148" />
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <footer class="footer">
+        <p>Best viewed in Netscape Navigator 4.0 at 800x600</p>
+        <p>&copy; <span id="year">2026</span> Murray Smith &middot; made with Notepad and love</p>
+        <p class="webring">[ <a href="#top">&lt;&lt; Prev</a> | <a href="#top">Indie Game Dev Webring</a> | <a href="#top">Next &gt;&gt;</a> ]</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
